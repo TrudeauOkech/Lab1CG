@@ -3,9 +3,9 @@ import cairo
 OUTPUT_DIR = "output/"
 
 # Surface
-surface = cairo. ImageSurface(cairo. FORMAT_RGB24, 800, 400)
-ctx = cairo. Context (surface)
-ctx.set_source_rgb(0.8, 0.8, 0.8)
+surface = cairo.ImageSurface(cairo.FORMAT_RGB24, 800, 400)
+ctx = cairo.Context(surface)
+ctx.set_source_rgb(1, 1, 1)
 ctx.paint()
 
  # Stroke
@@ -95,4 +95,12 @@ ctx.move_to(490, 40)
 ctx.line_to(170, 40)
 ctx.stroke()
 
-surface.write_to_png(f"{OUTPUT_DIR}image.png")
+ctx.arc(700, 80, 50, 0, 2 * 3.1416)
+ctx.set_source_rgb(0.8, 0.8, 0.8)
+ctx.fill()
+
+ctx.arc(670, 80, 40, 0, 2 * 3.1416)
+ctx.set_source_rgb(1, 1, 1)
+ctx.fill()
+
+surface.write_to_png(f"{OUTPUT_DIR}house_moon.png")
